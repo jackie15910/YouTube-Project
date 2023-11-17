@@ -1,4 +1,4 @@
-let menuIcon = document.querySelector(".hamburger-menu");
+let menuIcon = document.querySelector(".menu-button");
 let sidebar = document.querySelector(".sidebar");
 let body = document.querySelector("body");
 
