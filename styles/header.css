@@ -17,13 +17,27 @@
 .left-section{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    width: 9%;
 }
 
-.hamburger-menu{
-    height: 24px;
-    margin-left: 20px;
-    margin-right: 20px;
+.menu-button{
+    padding-top: 7px;
+    height: 40px;
+    width: 40px;
+    border-style: none;
     cursor: pointer;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.menu-button:hover{
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
+}
+
+.hamburger-icon{
+    width: 24px;
 }
 
 .youtube-logo{
