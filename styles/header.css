@@ -183,6 +183,11 @@ height: 24px;
     cursor: pointer;
 }
 
+.user-button{
+    background: none;
+    border-style: none;
+}
+
 .user-drop-down{
     position: absolute;
     top: 50px;
