@@ -34,11 +34,11 @@ document.querySelector(".search-bar").addEventListener('keyup', function(event) 
   }
 });
 
-currentTheme.onclick = function(){
+currentTheme.onclick = function () {
   const headerLinks = document.querySelectorAll(".header-link");
-  headerLinks.forEach(link.classList.toggle("hide-headerlinks");
+  headerLinks.forEach(link => link.classList.toggle("hide-headerlinks"));
   appearanceMenu.classList.toggle("show-appearancemenu");
-}
+};
 
 // document.addEventListener('DOMContentLoaded', function() {
 //   // This event listener ensures that the JavaScript code runs after the DOM has fully loaded.
