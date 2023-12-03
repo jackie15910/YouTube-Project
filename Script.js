@@ -5,8 +5,8 @@ let body = document.querySelector("body");
 let profileIcon = document.querySelector(".user-button")
 let userMenu = document.querySelector(".user-menu")
 
-let headerlink = document.querySelector(".header-link");
-let currentTheme = document.querySelector(".Light-Dark-mode");
+let headerlink = document.querySelectorAll(".header-link");
+let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
 
 menuIcon.onclick = function(){ //Shrinks the sidebar
@@ -34,11 +34,10 @@ document.querySelector(".search-bar").addEventListener('keyup', function(event) 
   }
 });
 
-
-
-
 currentTheme.onclick = function(){
-  appearanceMenu.classList.toggle("show-appearancemenu")
+  const headerLinks = document.querySelectorAll(".header-link");
+  headerLinks.forEach(link.classList.toggle("hide-headerlinks");
+  appearanceMenu.classList.toggle("show-appearancemenu");
 }
 
 // document.addEventListener('DOMContentLoaded', function() {

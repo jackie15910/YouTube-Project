@@ -238,3 +238,15 @@ height: 24px;
 .header-link div {
     font-size: 10px;
 }
+
+.appearance-menu{
+    display: none;
+}
+
+.show-appearancemenu{
+    display: block;
+}
+
+.hide-headerlinks{
+    display: none;
+}
