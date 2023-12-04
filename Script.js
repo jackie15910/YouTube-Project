@@ -5,6 +5,8 @@ let body = document.querySelector("body");
 let profileIcon = document.querySelector(".user-button")
 let userMenu = document.querySelector(".user-menu")
 
+let userInfo = document.querySelector(".user-info");
+
 let headerlink = document.querySelectorAll(".header-link");
 let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
@@ -38,6 +40,7 @@ currentTheme.onclick = function () {
   const headerLinks = document.querySelectorAll(".header-link");
   headerLinks.forEach(link => link.classList.toggle("hide-headerlinks"));
   appearanceMenu.classList.toggle("show-appearancemenu");
+  userInfo.classList.toggle("hide-userinfo");
 };
 
 // document.addEventListener('DOMContentLoaded', function() {
