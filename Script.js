@@ -11,6 +11,9 @@ let headerlink = document.querySelectorAll(".header-link");
 let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
 
+let themeOption = document.querySelectorAll('.theme-option');
+let darkMode = document
+
 menuIcon.onclick = function(){ //Shrinks the sidebar
   sidebar.classList.toggle("small-sidebar");
   body.classList.toggle("shift-body");
@@ -43,21 +46,17 @@ currentTheme.onclick = function () {
   userInfo.classList.toggle("hide-userinfo");
 };
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   // This event listener ensures that the JavaScript code runs after the DOM has fully loaded.
+themeOption.forEach(container => {
+  const theme = container.getAttribute('choose-theme');
 
-//   const appearanceToggle = document.getElementById('appearanceToggle');
-//   // Get the element with the ID 'appearanceToggle', which is the container for the dark mode toggle.
-
-//   const body = document.body;
-//   // Get the body element of the document.
-
-//   appearanceToggle.addEventListener('click', function() {
-//       // Add a click event listener to the 'appearanceToggle' element. This function will be executed when the element is clicked.
-
-//       // Toggle the 'dark-mode' class on the body
-//       body.classList.toggle('dark-mode');
-//       // Toggle the presence of the 'dark-mode' class on the body element. If the class is present, it will be removed; if it's not present, it will be added.
+  container.addEventListener('click', () => {
+    if (theme === 'dark') {
+      body.classList.add('dark-theme');
+    } else {
+        body.classList.remove('dark-theme');
+    }
+  });
+});
 
 //       // Change the appearance text
 //       const appearanceText = document.querySelector('#appearanceToggle p');
