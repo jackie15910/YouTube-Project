@@ -309,3 +309,8 @@ height: 24px;
     height: 24px;
     padding-right: 15px;   
 }
+
+.header-darkmode{
+    background-color: rgb(31, 31, 31);
+    color: white;
+}

@@ -11,8 +11,8 @@ let headerlink = document.querySelectorAll(".header-link");
 let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
 
-let themeOption = document.querySelectorAll('.theme-option');
-let darkMode = document
+let themeOptionContainers = document.querySelectorAll('.option-container');
+body.classList.add('light-theme');
 
 menuIcon.onclick = function(){ //Shrinks the sidebar
   sidebar.classList.toggle("small-sidebar");
@@ -46,29 +46,26 @@ currentTheme.onclick = function () {
   userInfo.classList.toggle("hide-userinfo");
 };
 
-themeOption.forEach(container => {
-  const theme = container.getAttribute('choose-theme');
+themeOptionContainers.forEach(option => {
+  option.addEventListener('click', function () {
+      // Check if the clicked option is not already selected
+      if (!option.classList.contains('selected')) {
+          // Remove 'selected' class from all options
+          themeOptionContainers.forEach(otherOption => {
+              otherOption.classList.remove('selected');
+          });
 
-  container.addEventListener('click', () => {
-    if (theme === 'dark') {
-      body.classList.add('dark-theme');
-    } else {
-        body.classList.remove('dark-theme');
-    }
+          // Apply the 'selected' class to the clicked option
+          option.classList.add('selected');
+
+          // Apply the theme based on the clicked option
+          if (option.id === 'darkThemeOption') {
+              body.classList.remove('light-theme');
+              body.classList.add('dark-theme');
+          } else if (option.id === 'lightThemeOption') {
+              body.classList.remove('dark-theme');
+              body.classList.add('light-theme');
+          }
+      }
   });
 });
-
-//       // Change the appearance text
-//       const appearanceText = document.querySelector('#appearanceToggle p');
-//       // Get the <p> element inside the 'appearanceToggle' container.
-
-//       if (body.classList.contains('dark-mode')) {
-//           // Check if the 'dark-mode' class is present on the body.
-//           appearanceText.textContent = 'Appearance: Dark';
-//           // If the dark mode is active, change the text content to 'Appearance: Dark'.
-//       } else {
-//           appearanceText.textContent = 'Appearance: Light';
-//           // If the dark mode is not active, change the text content to 'Appearance: Light'.
-//       }
-//   });
-// });
