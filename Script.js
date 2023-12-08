@@ -1,18 +1,19 @@
 let menuIcon = document.querySelector(".menu-button");
 let sidebar = document.querySelector(".sidebar");
 let body = document.querySelector("body");
+let icon = document.querySelector(".icon");
 
-let profileIcon = document.querySelector(".user-button")
-let userMenu = document.querySelector(".user-menu")
+let profileIcon = document.querySelector(".user-button");
+let userMenu = document.querySelector(".user-menu");
 
+let header = document.querySelector(".header");
+let searchbar = document.querySelector(".search-bar");
 let userInfo = document.querySelector(".user-info");
-
 let headerlink = document.querySelectorAll(".header-link");
 let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
 
 let themeOptionContainers = document.querySelectorAll('.option-container');
-body.classList.add('light-theme');
 
 menuIcon.onclick = function(){ //Shrinks the sidebar
   sidebar.classList.toggle("small-sidebar");
@@ -47,24 +48,31 @@ currentTheme.onclick = function () {
 };
 
 themeOptionContainers.forEach(option => {
-  option.addEventListener('click', function () {
+  option.addEventListener("click", function () {
       // Check if the clicked option is not already selected
-      if (!option.classList.contains('selected')) {
+      if (!option.classList.contains("selected")) {
           // Remove 'selected' class from all options
           themeOptionContainers.forEach(otherOption => {
-              otherOption.classList.remove('selected');
+              otherOption.classList.remove("selected");
           });
 
           // Apply the 'selected' class to the clicked option
-          option.classList.add('selected');
+          option.classList.add("selected");
 
           // Apply the theme based on the clicked option
-          if (option.id === 'darkThemeOption') {
-              body.classList.remove('light-theme');
-              body.classList.add('dark-theme');
-          } else if (option.id === 'lightThemeOption') {
-              body.classList.remove('dark-theme');
-              body.classList.add('light-theme');
+          if (option.id === "darkThemeOption") {
+              body.classList.remove("light-theme");
+              body.classList.add("dark-theme");
+              sidebar.classList.add("sidebar-darkmode");
+              header.classList.add("header-darkmode")
+              searchbar.classList.add("searchbar-darkmode")
+              userMenu.classList.add("usermenu-darkmode");
+              menuIcon.classList.add("menu-darkmode") //temporary
+          } else if (option.id === "lightThemeOption") {
+              body.classList.remove("dark-theme");
+              body.classList.add("light-theme");
+              sidebar.classList.remove("sidebar-darkmode");
+              userMenu.classList.remove("header-darkmode");
           }
       }
   });
