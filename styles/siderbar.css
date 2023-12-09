@@ -48,3 +48,7 @@
     background-color: black;
     color: white;
 }
+
+.icon-darkmode{
+    filter: invert(1);
+}

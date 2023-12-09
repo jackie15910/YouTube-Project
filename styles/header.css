@@ -9,9 +9,6 @@
     right: 0;
     z-index: 100;
     background-color: rgb(248, 248, 248);
-    border-bottom-width: 1px;
-    border-bottom-color: rgb(228, 228, 228);
-    border-bottom-style: solid;
 }
 
 .left-section{
@@ -313,6 +310,8 @@ height: 24px;
 .header-darkmode{
     background-color: black;
     color: white;
+    border-bottom-color: rgb(228, 228, 228);
+
 }
 
 .menu-darkmode{
@@ -321,11 +320,25 @@ height: 24px;
 
 .searchbar-darkmode{
     background-color: rgb(31, 31, 31);
-    color: gray;
-    border-color: gray;
+    color: rgb(207, 207, 207);
+    border-color: rgb(65, 65, 65);
 }
 
 .usermenu-darkmode{
     background-color: rgb(31, 31, 31);
     color: white;
 }
+
+.searchButton-darkmode{
+    background-color: rgb(44, 44, 44);
+    border-color: rgb(65, 65, 65);
+}
+
+.voice-darkmode{
+    background-color: rgb(44, 44, 44);
+}
+
+.icon-darkmode{
+    filter: invert(1);
+}
+

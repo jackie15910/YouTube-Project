@@ -1,7 +1,7 @@
 let menuIcon = document.querySelector(".menu-button");
 let sidebar = document.querySelector(".sidebar");
 let body = document.querySelector("body");
-let icon = document.querySelector(".icon");
+let icon = document.querySelectorAll(".icon");
 
 let profileIcon = document.querySelector(".user-button");
 let userMenu = document.querySelector(".user-menu");
@@ -12,6 +12,8 @@ let userInfo = document.querySelector(".user-info");
 let headerlink = document.querySelectorAll(".header-link");
 let currentTheme = document.querySelector(".show-appearance-menu");
 let appearanceMenu = document.querySelector(".appearance-menu");
+let searchButton = document.querySelector(".search-button");
+let voiceButton = document.querySelector(".voice-button");
 
 let themeOptionContainers = document.querySelectorAll('.option-container');
 
@@ -47,6 +49,12 @@ currentTheme.onclick = function () {
   userInfo.classList.toggle("hide-userinfo");
 };
 
+function switchDarkMode() {
+  icon.forEach(iconElement => {
+    iconElement.classList.toggle("icon-darkmode");
+  });
+}
+
 themeOptionContainers.forEach(option => {
   option.addEventListener("click", function () {
       // Check if the clicked option is not already selected
@@ -61,18 +69,26 @@ themeOptionContainers.forEach(option => {
 
           // Apply the theme based on the clicked option
           if (option.id === "darkThemeOption") {
-              body.classList.remove("light-theme");
+              // body.classList.remove("light-theme");
               body.classList.add("dark-theme");
               sidebar.classList.add("sidebar-darkmode");
-              header.classList.add("header-darkmode")
-              searchbar.classList.add("searchbar-darkmode")
+              header.classList.add("header-darkmode");
+              searchbar.classList.add("searchbar-darkmode");
               userMenu.classList.add("usermenu-darkmode");
-              menuIcon.classList.add("menu-darkmode") //temporary
+              menuIcon.classList.add("menu-darkmode"); //temporary
+              searchButton.classList.add("searchButton-darkmode")
+              voiceButton.classList.add("voice-darkmode")
+              switchDarkMode();
           } else if (option.id === "lightThemeOption") {
               body.classList.remove("dark-theme");
-              body.classList.add("light-theme");
+              // body.classList.add("light-theme");
               sidebar.classList.remove("sidebar-darkmode");
+              header.classList.remove("header-darkmode");
+              searchbar.classList.remove("searchbar-darkmode");
               userMenu.classList.remove("header-darkmode");
+              menuIcon.classList.remove("menu-darkmode"); //temporary
+              searchButton.classList.remove("searchButton-darkmode")
+              switchDarkMode();
           }
       }
   });
