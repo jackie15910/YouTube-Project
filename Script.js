@@ -1,5 +1,6 @@
 let menuIcon = document.querySelector(".menu-button");
 let sidebar = document.querySelector(".sidebar");
+let sidebarLinks = document.querySelectorAll(".sidebar-link");
 let body = document.querySelector("body");
 let icon = document.querySelectorAll(".icon");
 
@@ -19,6 +20,7 @@ let themeOptionContainers = document.querySelectorAll('.option-container');
 
 menuIcon.onclick = function(){ //Shrinks the sidebar
   sidebar.classList.toggle("small-sidebar");
+  sidebarLinks.forEach(link => link.classList.toggle("small-sidebar-link"));
   body.classList.toggle("shift-body");
 }
 
@@ -49,7 +51,7 @@ currentTheme.onclick = function () {
   userInfo.classList.toggle("hide-userinfo");
 };
 
-function switchDarkMode() {
+function iconDarkMode() {
   icon.forEach(iconElement => {
     iconElement.classList.toggle("icon-darkmode");
   });
@@ -69,7 +71,6 @@ themeOptionContainers.forEach(option => {
 
           // Apply the theme based on the clicked option
           if (option.id === "darkThemeOption") {
-              // body.classList.remove("light-theme");
               body.classList.add("dark-theme");
               sidebar.classList.add("sidebar-darkmode");
               header.classList.add("header-darkmode");
@@ -78,7 +79,7 @@ themeOptionContainers.forEach(option => {
               menuIcon.classList.add("menu-darkmode"); //temporary
               searchButton.classList.add("searchButton-darkmode")
               voiceButton.classList.add("voice-darkmode")
-              switchDarkMode();
+              iconDarkMode();
           } else if (option.id === "lightThemeOption") {
               body.classList.remove("dark-theme");
               // body.classList.add("light-theme");
@@ -88,7 +89,7 @@ themeOptionContainers.forEach(option => {
               userMenu.classList.remove("header-darkmode");
               menuIcon.classList.remove("menu-darkmode"); //temporary
               searchButton.classList.remove("searchButton-darkmode")
-              switchDarkMode();
+              iconDarkMode();
           }
       }
   });

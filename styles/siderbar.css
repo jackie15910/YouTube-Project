@@ -10,16 +10,20 @@
 }
 
 .sidebar-link{
-    height: 50px;
+    height: 45px;
+    width: 90%;
     display: flex;
     align-items: center;
     flex-direction: row;
     cursor: pointer;
-    padding-left: 20px;
+    border-radius: 12px;
+    margin-left: 12px;
+    padding-left: 11px;
 }
 
 .sidebar p{
     font-size: 14px;
+    padding-left: 15px;   
 }
 
 .sidebar-link:hover{
@@ -29,7 +33,6 @@
 .sidebar-link img{
     height: 24px;
     margin-bottom: 4px;
-    padding-right: 15px;   
 }
 
 .sidebar-link div {
@@ -37,7 +40,13 @@
 }
 
 .small-sidebar{
-    width: 3.5%;
+    justify-content: center;
+    width: 50px;
+}
+
+.small-sidebar-link{
+    justify-content: center;
+    padding-left: 0;
 }
 
 .small-sidebar p{
