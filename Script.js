@@ -3,6 +3,7 @@ let sidebar = document.querySelector(".sidebar");
 let sidebarLinks = document.querySelectorAll(".sidebar-link");
 let body = document.querySelector("body");
 let icon = document.querySelectorAll(".icon");
+let logo = document.querySelector(".youtube-logo");
 
 let profileIcon = document.querySelector(".user-button");
 let userMenu = document.querySelector(".user-menu");
@@ -79,6 +80,7 @@ themeOptionContainers.forEach(option => {
               menuIcon.classList.add("menu-darkmode"); //temporary
               searchButton.classList.add("searchButton-darkmode")
               voiceButton.classList.add("voice-darkmode")
+              logo.src = 'icon/youtube-logo-darkmode.svg';
               iconDarkMode();
           } else if (option.id === "lightThemeOption") {
               body.classList.remove("dark-theme");
@@ -88,7 +90,9 @@ themeOptionContainers.forEach(option => {
               searchbar.classList.remove("searchbar-darkmode");
               userMenu.classList.remove("header-darkmode");
               menuIcon.classList.remove("menu-darkmode"); //temporary
+              voiceButton.classList.remove("voice-darkmode")
               searchButton.classList.remove("searchButton-darkmode")
+              logo.src = 'icon/youtube-logo.svg';
               iconDarkMode();
           }
       }
